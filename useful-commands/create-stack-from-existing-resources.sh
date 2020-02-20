@@ -1,8 +1,16 @@
 #!/bin/bash
-# A script to create a stack from existing resources - template shown
+# A script to create a stack from existing resources that exist already
+# within your AWS account
 
 # run GetTemplateSummary to learn which properties identify each resource type
 # in th template.
+
+# You need to provide a template that describes the resources that will in the
+# new stack and the resource configurations. Each resource must have a
+# DeletionPolicy see; https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-new-stack.html
+
+# A unique id for each target resource
+
 
 aws cloudformation get-template-summary
     --template-body file://templateToImport.json
